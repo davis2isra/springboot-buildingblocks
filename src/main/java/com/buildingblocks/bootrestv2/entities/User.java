@@ -9,12 +9,14 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.List;
 
+import org.springframework.hateoas.RepresentationModel;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "user")
 @Table(name = "user")
-public class User {
+public class User extends RepresentationModel<User> {
 
     @Id
     @GeneratedValue
