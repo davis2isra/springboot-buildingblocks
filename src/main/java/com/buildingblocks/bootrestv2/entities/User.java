@@ -1,5 +1,7 @@
 package com.buildingblocks.bootrestv2.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +18,7 @@ import org.springframework.hateoas.RepresentationModel;
 @AllArgsConstructor
 @Entity(name = "user")
 @Table(name = "user")
+@JsonIgnoreProperties({"firstname", "lastname"})
 public class User extends RepresentationModel<User> {
 
     @Id
@@ -36,7 +39,8 @@ public class User extends RepresentationModel<User> {
     @Column(name="ROLE", length = 50, nullable=false)
     private String role;
 
-    @Column(name="SSN", length=50, nullable=false, unique = true)
+    @Column(name="SSN", length=50, nullable=true, unique = true)
+    @JsonIgnore
     private String ssn;
 
     @OneToMany(mappedBy = "user")
