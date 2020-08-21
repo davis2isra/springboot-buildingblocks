@@ -56,4 +56,7 @@ public class User extends RepresentationModel<User> {
     @OneToMany(mappedBy = "user")
     @JsonView(Views.Internal.class)
     private List<Order> orders;
+
+    @Column(name = "ADDRESS")
+    private String address;
 }
