@@ -13,16 +13,18 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.List;
 
-import org.springframework.hateoas.RepresentationModel;
+//import org.springframework.hateoas.RepresentationModel;
 
 @Data
-@NoArgsConstructor
+//@NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "user")
 @Table(name = "user")
 // @JsonIgnoreProperties({"firstname", "lastname"}) - Static Filtering @JsonIgnore
 //@JsonFilter(value="userFilter") - Used for MappingJacksonValue filtering Section
-public class User extends RepresentationModel<User> {
+public class User
+        //extends RepresentationModel<User>
+{
 
     @Id
     @GeneratedValue

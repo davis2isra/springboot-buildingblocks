@@ -3,14 +3,16 @@ package com.buildingblocks.bootrestv2.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
-import org.springframework.hateoas.RepresentationModel;
+//import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "orders")
-public class Order extends RepresentationModel<Order> {
+public class Order
+        //extends RepresentationModel<Order>
+{
 
     @Id
     @GeneratedValue
